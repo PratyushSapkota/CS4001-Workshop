@@ -22,11 +22,15 @@ public class BankAccount {
     }
 
     void withdrawMoney(float amount) {
-        this.balance -= amount;
+        if (this.balance < amount) {
+            System.out.println("Insufficient Balance");
+        } else {
+            this.balance -= amount;
+        }
     }
 
     void balance() {
-        System.out.println("Rs " +balance);
+        System.out.println("Rs " + balance);
     }
 
 
